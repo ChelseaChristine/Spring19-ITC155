@@ -3,10 +3,11 @@ import java.awt.*;
 
 public class Assignment1 {
 	public static void main(String[] args) {
-	
+		//starts the drawing panel
 		DrawingPanel panel = new DrawingPanel(500,500);
 		panel.setBackground(Color.YELLOW);
 		Graphics face = panel.getGraphics();
+		
 		//creates circles for ears
 		face.setColor(Color.BLUE);
 		face.fillOval(100, 100, 100, 100);

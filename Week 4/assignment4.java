@@ -29,11 +29,11 @@ public class assignment4 {
 
 		    for(String key : map.keySet()) {
 		        String value = map.get(key);
-
-		        if(unique.contains(value))
+			    
+		       	if(unique.contains(value)){
 		            return false;
-
-		        unique.add(value);
+			}
+                	unique.add(value);
 		    }
 
 		    return true;

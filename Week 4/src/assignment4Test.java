@@ -1,8 +1,15 @@
-import java.util.*;
+import static org.junit.Assert.*;
 
-public class assignment4 {
+import java.util.HashMap;
+import java.util.Map;
 
-	public static void main(String[] args) {
+import org.junit.Test;
+
+public class assignment4Test {
+
+	@Test
+	public void testIsUnique() {
+		assignment4 tester = new assignment4();
 		Map<String, String> mainMap = new HashMap<String, String>();
 		Map<String, String> mainMap2 = new HashMap<String, String>();
 		mainMap.put("Marty", "Stepp");
@@ -19,24 +26,14 @@ public class assignment4 {
 		mainMap2.put("Amanda", "Camp");
 		mainMap2.put("Chelsea", "Jansen");
 		
-		System.out.println(isUnique(mainMap));
-		System.out.println(isUnique(mainMap2));
-
-	}
-	//takes a map as a string, creates a HashSet
-	public static boolean isUnique(Map<String, String> map) {
-		    HashSet<String> unique = new HashSet<String>();
-
-		    for(String key : map.keySet()) {
-		        String value = map.get(key);
-
-		        if(unique.contains(value))
-		            return false;
-
-		        unique.add(value);
-		    }
-
-		    return true;
+		//making sure something is being produced
+		assertNotNull(tester.isUnique(mainMap));
+		//making sure that the first hashmap comes out true
+		assertEquals(true, tester.isUnique(mainMap));
+		//making sure that the first hashmap comes out false
+		assertEquals(false, tester.isUnique(mainMap2));
+		
+		
 	}
 
 }
